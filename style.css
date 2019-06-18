@@ -1,0 +1,110 @@
+/*rgb(176, 232, 208) = #b0e8d0
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Montserrat', sans-serif;*/
+
+body {
+  background: #ffffff url("/data/simon-matzinger-200715-unsplash.jpg");
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  width: 100%;
+  height: 100vh;
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.jumbo{
+  background-color:rgb(176, 232, 208,.7);
+  justify-content: center;
+  height:100%;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+
+.wrapper {
+position:absolute;
+margin:auto;
+top:0;
+right:0;
+bottom:0;
+left:0;
+width:600px;
+height:600px;
+}
+
+
+#swansearch{
+    width:40em;
+}
+
+#livesearch{
+    vertical-align: middle;
+    justify-content: center;
+    width:30em;
+}
+
+/* Search result text */
+.info{
+  font-size:28px;
+  text-align: center;
+}
+
+
+.answers{
+  height: 60em;
+  margin-top: 10px;
+  overflow:auto;
+  transform: translateY(15%);
+}
+
+
+
+.findings{
+  background-color:rgb(176, 232, 208);
+}
+
+/* Search with style àla DarkCode */
+
+.search-box {
+    position: absolute;
+    background: white;
+    height: 70px;
+    border-radius: 70px;
+}
+
+
+.search-txt {
+    border: none;
+    background: none;
+    outline: none;
+    float: right;
+    padding: 0;
+    color: #2f3640;
+    font-size: 28px;
+    transition: 0.6s;
+    line-height: 60px;
+    width: 0;
+}
+
+.search-box:hover > .search-txt {
+    width: 340px;
+    padding: 0 6px;
+}
+
+.search-btn {
+    color: #9bd4cb;
+    float: left;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #00b0b0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search-box:hover > .search-btn {
+    background: #2f3640;
+}

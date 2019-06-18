@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Autocomplete: XML as data source</title>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.js"></script>
+<meta charset="UTF-8">
+<script>
+	$(document).ready(function() {
+		var myArr = [];
+	
+		$.ajax({
+			type: "GET",
+			url: "/states.xml",
+			dataType: "xml",
+			success: parseXml,
+			complete: setupAC,
+			failure: function(data) {
+				alert("XML File could not be found");
+				}
+		});
+	//function that finds all elements named state and adds the label attribute to the array myArr
+		function parseXml(xml)
+		{
+			//find every query value
+			$(xml).find("state").each(function()
+			{
+				myArr.push($(this).attr("label"));
+			});	
+		}
+		//setup autocomplete and use the array(myarr) to show names
+		function setupAC() {
+ $("input#searchBox").autocomplete({
+     source: myArr,
+     minLength: 3,
+     select: function(event, ui) {
+       $("input#searchBox").val(ui.item.value);
+       $("#searchForm").submit();
+     }
+ });
+}
+	});
+</script>
+</head>
+
+<body style="font-size:62.5%;">
+
+<h1>jQuery Autocomplete using XML as Data Source Example</h1>
+<form name="search_form" id="searchForm" method="GET" action="search_results.html">
+	<label for="searchBox">Keyword Search</label>
+	<input type="text" id="searchBox" name="searchString" />
+	
+	<button name="searchKeyword" id="searchKeyword">Submit</button>
+</form>
+
+</body>
+</html>

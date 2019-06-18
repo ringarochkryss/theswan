@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    
+    <!-- Style Sheets-->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  <!-- Manifest-->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Svanen</title>
+
+</head>
+ 
+<script>
+function showResult(str) {
+  if (str.length==0) { 
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("livesearch").innerHTML=this.responseText;
+      document.getElementById("livesearch").style.border="2px solid #b0e8d0";
+    }
+  };
+  xmlhttp.open("GET","livesearch.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+
+</head>
+
+<body>
+
+<div class=" jumbo jumbotron jumbotron-fluid">
+  <div class="container text-center">
+    <h3>Välkommen till</h3>
+    <h4 class="display-3">Biblioteket</h4>
+    <h1 class="display-1">SVANEN</h1>
+    <h6 class="display-4">Sök efter böcker i vår stora samling:</h6>
+
+   <div id="swansearch mt-10" class="vertical-align-center">
+                                <div class="search-box" >
+                                    <input class="search-txt" type="text" name="" id="search" placeholder="search book title" onkeyup="showResult(this.value)">
+                                    <a class="search-btn mx-auto" href="#">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                               </div>                           
+           </div>
+  </div>
+</div>
+
+  <div class="wrapper row">
+           
+  </div>
+  <div class="answers mx-auto">
+              <div class="findings"></div>
+              <div id="livesearch"></div>
+  </div>
+>
+</body>
+</html>

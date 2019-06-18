@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    
+    <!-- Style Sheets-->
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  <title>Svanen</title>
+
+
+
+
+</head>
+<body>
+ 
+<script>
+function showResult(str) {
+  if (str.length==0) { 
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+    return;
+  }
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("livesearch").innerHTML=this.responseText;
+      document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+    }
+  }
+  xmlhttp.open("GET","livesearch.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
+
+</head>
+
+<body>
+<div>
+<form>
+    <input type="text" size="30" id="search" placeholder="search book title" onkeyup="showResult(this.value)">
+      <div id="livesearch2"></div>
+    <div>
+  <div class="findings2"></div>
+
+</div>
+</form>
+</div>
+
+
+<div id=results class="align-items-center">
+                                <div class="search-box" >
+                                    <input class="search-txt" type="text" name="" id="search" placeholder="search book title" onkeyup="showResult(this.value)">
+                                    <a class="search-btn" href="#">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </div>
+                                <div id="livesearch"></div>
+                                <div class="findings"></div>
+
+
+
+
+</body>
+</html>
