@@ -28,7 +28,7 @@ if (strlen($q)>0) {
         <dd class='info'><em>" . $z->item(0)->childNodes->item(0)->nodeValue . "</em></dd>
         <dd class='info desc'>". $w->item(0)->childNodes->item(0)->nodeValue . "</dd>
         <dd class='info'>"  . $p->item(0)->childNodes->item(0)->nodeValue . "$</dd>
-        <dd class='bookImage'><img src='/data/svan.JPG' style='height:45px' /></dd>
+        <dd class='bookImage'><img src='data/svan.JPG' style='height:45px' /></dd>
         </dl></div>";
         }
       else
@@ -38,7 +38,7 @@ if (strlen($q)>0) {
         <dd class='info'><em>" . $z->item(0)->childNodes->item(0)->nodeValue . "</em></dd>
         <dd class='info desc'>". $w->item(0)->childNodes->item(0)->nodeValue . "</dd>
         <dd class='info'>"  . $p->item(0)->childNodes->item(0)->nodeValue . "$</dd>
-        <dd class='bookImage'><img src='/data/svan.JPG' style='height:45px' /></dd>
+        <dd class='bookImage'><img src='data/svan.JPG' style='height:45px' /></dd>
         </dl></div>";
         }
       }
