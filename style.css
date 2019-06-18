@@ -3,7 +3,7 @@ font-family: 'Cormorant Garamond', serif;
 font-family: 'Montserrat', sans-serif;*/
 
 body {
-  background: #ffffff url("/data/simon-matzinger-200715-unsplash.jpg");
+  background: #ffffff url("data/simon-matzinger-200715-unsplash.jpg");
   background-repeat: repeat-y;
   background-size: 100% auto;
   width: 100%;
